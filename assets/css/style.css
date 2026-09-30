@@ -1,0 +1,508 @@
+/* ============================================================
+   EF234301 Web Programming — Quiz 1
+   Personal Website — stylesheet
+   Author: Uliana (5999261080)
+   ============================================================ */
+
+/* ---------- 1. Reset & box-sizing ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* ---------- 2. Design tokens ---------- */
+:root {
+  --ink:        #1a1a2e;
+  --ink-soft:   #475569;
+  --teal:       #0f766e;
+  --teal-dark:  #0b5a54;
+  --bg:         #f8fafc;
+  --surface:    #ffffff;
+  --line:       #e2e8f0;
+  --radius:     12px;
+  --shadow:     0 1px 3px rgba(15, 23, 42, 0.06);
+  --max:        1100px;
+}
+
+/* ---------- 3. Base ---------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: var(--teal-dark);
+}
+
+/* ---------- 4. Skip link ---------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  color: var(--teal);
+  border: 2px solid var(--teal);
+  border-radius: 6px;
+  z-index: 100;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- 5. Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.brand:hover {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.site-header nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin-left: auto;
+  padding: 0;
+}
+
+.site-header nav a {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-header nav a:hover {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.site-header nav a[aria-current="page"] {
+  color: var(--teal);
+  font-weight: 600;
+  border-bottom-color: var(--teal);
+}
+
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  padding: 0.4rem 0.9rem;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+/* ---------- 6. Main layout ---------- */
+main {
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+section + section {
+  margin-top: 3rem;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+p + p {
+  margin-top: 0.75rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- 7. Hero ---------- */
+#hero {
+  padding: 1rem 0 0.5rem;
+}
+
+#hero .lead {
+  max-width: 60ch;
+}
+
+#hero p {
+  max-width: 65ch;
+}
+
+/* ---------- 8. Button ---------- */
+.btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.35rem;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--teal-dark);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* ---------- 9. Card grid ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  border-color: var(--teal);
+}
+
+.card p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.card-link {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ---------- 10. Figures & captions ---------- */
+figure {
+  margin: 1.25rem 0;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* ---------- 11. Tables ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1.25rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+thead th {
+  background: #f1f5f9;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ---------- 12. Lists ---------- */
+main ul:not(.card-grid):not(.interest-list):not(.food-meta) {
+  padding-left: 1.25rem;
+}
+
+main ul li {
+  margin-bottom: 0.35rem;
+}
+
+/* ---------- 13. Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  background: var(--surface);
+}
+
+/* ---------- 14. Mobile menu ---------- */
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .site-header nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 1rem;
+    min-width: 200px;
+    padding: 1rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  }
+
+  .site-header nav ul.nav-open {
+    display: flex;
+  }
+
+  .site-header {
+    position: relative;
+  }
+}
+
+/* ---------- 15. Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- 16. Profile page ---------- */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 720px) {
+  .profile-grid {
+    grid-template-columns: 260px 1fr;
+  }
+}
+
+.profile-photo img {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--surface);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  margin: 0 auto;
+}
+
+.profile-photo figcaption {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.profile-text p + p {
+  margin-top: 0.85rem;
+}
+
+.interest-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.interest-list li {
+  padding: 0.85rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal);
+  border-radius: 8px;
+}
+
+/* ---------- 17. Food & Tourist pages ---------- */
+.food-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.food-card h3 {
+  margin-top: 1rem;
+}
+
+.food-card figure {
+  margin: 0 0 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.food-card figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover figure img {
+  transform: scale(1.03);
+}
+
+.food-card figcaption {
+  font-size: 0.85rem;
+  padding: 0.5rem 0 0;
+  margin-top: 0;
+  text-align: left;
+}
+
+.food-meta {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.85rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.food-meta li {
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.food-meta strong {
+  color: var(--ink);
+  font-weight: 600;
+}

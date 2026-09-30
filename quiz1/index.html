@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uliana — Home | EF234301 Quiz 1</title>
+  <meta name="description" content="Personal website of Uliana — profile, Moscow hometown, local food, and tourist places. Built for EF234301 Web Programming Quiz 1.">
+  <meta name="author" content="Uliana">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="brand" href="./">Uliana</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-label">Menu</span>
+    </button>
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="./">Home</a></li>
+        <li><a href="profile/">Profile</a></li>
+        <li><a href="hometown/">Hometown</a></li>
+        <li><a href="food/">Local Food</a></li>
+        <li><a href="tourist/">Tourist Places</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Welcome to My Personal Website</h1>
+      <p class="lead">
+        Hi, I'm <strong>Uliana</strong> — a third-year Information Security student
+        at <strong>HSE University</strong>, Moscow. This website introduces me,
+        my hometown <em>Moscow</em>, its local food, and the tourist places worth visiting.
+      </p>
+      <p>
+        Built as part of <strong>EF234301 Web Programming — Quiz 1</strong>
+      </p>
+      <a class="btn" href="profile/">About me →</a>
+    </section>
+
+    <section id="explore" aria-labelledby="explore-heading">
+      <h2 id="explore-heading">Explore the Site</h2>
+      <p>Four sections, each introducing a different part of my world.</p>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3>Profile</h3>
+          <p>Who I am, what I study, and the skills I am building.</p>
+          <a class="card-link" href="profile/">Open Profile →</a>
+        </article>
+
+        <article class="card">
+          <h3>Hometown</h3>
+          <p>A short introduction to Moscow — history, size, and character.</p>
+          <a class="card-link" href="hometown/">Open Hometown →</a>
+        </article>
+
+        <article class="card">
+          <h3>Local Food</h3>
+          <p>Signature dishes you should try when visiting Moscow.</p>
+          <a class="card-link" href="food/">Open Local Food →</a>
+        </article>
+
+        <article class="card">
+          <h3>Tourist Places</h3>
+          <p>The must-see landmarks and where to find them.</p>
+          <a class="card-link" href="tourist/">Open Tourist Places →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year>2026</span> Uliana · Student ID 5999261080 · EF234301 Web Programming (D) — Quiz 1</p>
+  </footer>
+
+  <script src="../assets/js/script.js" defer></script>
+</body>
+</html>
